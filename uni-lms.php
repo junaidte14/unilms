@@ -5,14 +5,14 @@
  *
  *
  * @link              https://codoplex.com
- * @since             1.0.3
+ * @since             1.0.4
  * @package           Unilms
  *
  * @wordpress-plugin
  * Plugin Name:       UniLMS
  * Plugin URI:        #
  * Description:       A learning management system developed for universities, schools, colleges, academies or any other type of institutes.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            Junaid Hassan
  * Author URI:        https://codoplex.com
  * License:           GPL-2.0+
@@ -43,7 +43,7 @@ global $unilmspro_plugin_name;
 $unilmspro_plugin_name = 'unilms';
 
 global $unilmspro_plugin_version;
-$unilmspro_plugin_version = '1.0';
+$unilmspro_plugin_version = '1.0.4';
 
 /**
  * The code that runs during plugin activation.
