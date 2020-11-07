@@ -1,0 +1,12 @@
+.uni_lms_inst_logo{
+	display: none;
+}
+
+.ui-datepicker {
+    margin-left: -50px !important;
+    background-color: #f1f1f1 !important;
+    border: none !important;
+}
+.ui-widget-content {
+    background: #f1f1f1 url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x !important;
+}
