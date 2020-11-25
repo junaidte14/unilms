@@ -21,23 +21,33 @@ get_header(); ?>
                     </div>
                 </header>
                 <div class="entry-header">
-                    <?php codoswp_post_thumbnail() ?>
-                    <strong><?php _e('Course Code:', 'unilms');?> </strong>
-                    <?php echo esc_html( get_post_meta( get_the_ID(), 'course_code', true ) ); ?>
-                    <br />
-                    <strong><?php _e('Class:', 'unilms');?> </strong>
-                    <a href="<?php echo get_permalink(get_post_meta( get_the_ID(), 'course_class', true ));?>" target="_blank">
-                    <?php echo esc_html( get_the_title ( get_post_meta( get_the_ID(), 'course_class', true ) ) ); ?>
-                    </a>
-                    <br />
-                    <strong><?php _e('Credit Hours:', 'unilms');?> </strong>
-                    <?php echo esc_html( get_post_meta( get_the_ID(), 'credit_hours', true ) ); ?>
-                    <br />
-                    <strong><?php _e('Course Duration (Weeks):', 'unilms');?> </strong>
-                    <?php echo esc_html( get_post_meta( get_the_ID(), 'course_duration', true ) ); ?>
-                    <br />
-                    <strong><?php _e('Lectures Per Week:', 'unilms');?> </strong>
-                    <?php echo esc_html( get_post_meta( get_the_ID(), 'course_lectures_per_week', true ) ); ?>
+                    <?php the_post_thumbnail() ?>
+                    <?php if(get_post_meta( get_the_ID(), 'course_code', true )){ ?>
+                        <strong><?php _e('Course Code:', 'unilms');?> </strong>
+                        <?php echo esc_html( get_post_meta( get_the_ID(), 'course_code', true ) ); ?>
+                        <br />
+                    <?php } ?>
+                    <?php if(get_post_meta( get_the_ID(), 'course_class', true )){ ?>
+                        <strong><?php _e('Class:', 'unilms');?> </strong>
+                        <a href="<?php echo get_permalink(get_post_meta( get_the_ID(), 'course_class', true ));?>" target="_blank">
+                            <?php echo esc_html( get_the_title ( get_post_meta( get_the_ID(), 'course_class', true ) ) ); ?>
+                        </a>
+                        <br />
+                    <?php } ?>
+                    <?php if(get_post_meta( get_the_ID(), 'credit_hours', true )){ ?>
+                        <strong><?php _e('Credit Hours:', 'unilms');?> </strong>
+                        <?php echo esc_html( get_post_meta( get_the_ID(), 'credit_hours', true ) ); ?>
+                        <br />
+                    <?php } ?>
+                    <?php if(get_post_meta( get_the_ID(), 'course_duration', true )){ ?>
+                        <strong><?php _e('Course Duration (Weeks):', 'unilms');?> </strong>
+                        <?php echo esc_html( get_post_meta( get_the_ID(), 'course_duration', true ) ); ?>
+                        <br />
+                    <?php } ?>
+                    <?php if(get_post_meta( get_the_ID(), 'course_lectures_per_week', true )){ ?>
+                        <strong><?php _e('Lectures Per Week:', 'unilms');?> </strong>
+                        <?php echo esc_html( get_post_meta( get_the_ID(), 'course_lectures_per_week', true ) ); ?>
+                    <?php } ?>
                 </div><!-- .entry-header -->
                 <div class="entry-content-wrapper">
                     <div class="entry-content">
@@ -73,6 +83,8 @@ get_header(); ?>
                             <?php
                                     $i++;
                                     }
+                                }else{
+                                    _e('No contents defined yet!: ', 'unilms');
                                 }
                             ?>
                         </div>
