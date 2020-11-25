@@ -542,11 +542,8 @@ function add_uni_lms_course_contents_fields_std( $uni_lms_course_id, $uni_lms_co
             }
             if ( !empty( $new_array_contents )){
                 update_post_meta( $uni_lms_course_id, 'repeatable_fields_unilms_coursecont', $new_array_contents );
-            }
-                
-        }else{
-            _e('Some required fields are missing!', 'unilms');
-        }    
+            }  
+        }   
     }
 
     
@@ -1056,48 +1053,55 @@ function uni_lms_courses_class_filter_request_query_std($query){
     return $query;
 }
 
-
 /*create shortcode to display all courses*/
-
 function uni_lms_courses_list_shortcode_std() {
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     $args = array( 'post_type' => 'uni_lms_courses', 'posts_per_page' => 10, 'paged' => $paged);
     $loop = new WP_Query( $args );
-    ?>
-    <table>
-        <!-- Display table headers -->
-        <tr>
-            <th><strong><?php _e('Thumbnail','unilms');?></strong></th>
-            <th><strong><?php _e('Title','unilms');?></strong></th>
-            <th><strong><?php _e('Course Code','unilms');?></strong></th>
-            <th><strong><?php _e('Credit Hours','unilms');?></strong></th>
-        </tr>
+    ob_start();
+    if($loop->have_posts()){
+        ?>
+        <table>
+            <!-- Display table headers -->
+            <tr>
+                <th><strong><?php _e('Title','unilms');?></strong></th>
+                <th><strong><?php _e('Course Code','unilms');?></strong></th>
+                <th><strong><?php _e('Credit Hours','unilms');?></strong></th>
+            </tr>
+        <?php
+        while ( $loop->have_posts() ) : $loop->the_post();
+        ?>
+            <tr>
+                <td>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </td>
+                <td><?php echo esc_html( get_post_meta( get_the_ID(), 'course_code', true ) ); ?></td>
+                <td><?php echo esc_html( get_post_meta( get_the_ID(), 'credit_hours', true ) ); ?></td>
+            </tr>
+        <?php
+        endwhile;
+        ?>
+        </table>
+        <?php //global $wp_query;
+        if ( isset( $loop->max_num_pages ) && $loop->max_num_pages > 1 ) { ?>
+            <nav style="overflow: hidden;">
+                <div class="nav-previous alignleft">
+                    <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older Courses', $loop->max_num_pages); ?>
+                </div>
+                <div class="nav-next alignright">
+                    <?php previous_posts_link( 'Newer Courses <span class= "meta-nav">&rarr;</span>' ); ?>
+                </div>
+            </nav>
+        <?php };?>
     <?php
-    while ( $loop->have_posts() ) : $loop->the_post();
+    }else{
     ?>
-        <tr>
-            <td style="text-align: center;"><?php the_post_thumbnail('thumbnail'); ?></td>
-            <td style="text-align: center;"><a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?></a></td>
-            <td style="text-align: center;"><?php echo esc_html( get_post_meta( get_the_ID(), 'course_code', true ) ); ?></td>
-            <td style="text-align: center;"><?php echo esc_html( get_post_meta( get_the_ID(), 'credit_hours', true ) ); ?></td>
-        </tr>
-    <?php
-    endwhile;
-    ?>
-    </table>
-    <?php //global $wp_query;
-    if ( isset( $loop->max_num_pages ) && $loop->max_num_pages > 1 ) { ?>
-        <nav style="overflow: hidden;">
-            <div class="nav-previous alignleft">
-                <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older Courses', $loop->max_num_pages); ?>
-            </div>
-            <div class="nav-next alignright">
-                <?php previous_posts_link( 'Newer Courses <span class= "meta-nav">&rarr;</span>' ); ?>
-            </div>
-        </nav>
-    <?php };?>
-    <?php
+    <p><?php _e('Nothing found!', 'unilms');?></p>
+    <?php    
+    }
+    return ob_get_clean();
 }
 add_shortcode( 'uni_lms_courses_list', 'uni_lms_courses_list_shortcode_std' );
 

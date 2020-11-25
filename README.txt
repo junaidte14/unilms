@@ -3,7 +3,7 @@ Contributors: junaidte14
 Donate link: https://codoplex.com
 Tags: lms, learning management system, university management, course management, result management, school management
 Requires at least: 3.0.1
-Tested up to: 4.9.4
+Tested up to: 5.5.3
 Requires PHP: 5.2.4
 Stable tag: 1.0.3
 License: GPLv2 or later
@@ -19,7 +19,7 @@ Features List:
 	* Admin can add new classes or update/delete existing ones
 	* Classes can be duplicated if they share most of the content to save class creation time
 	* Admin can assign courses to each class
-	* Admin can also generate class specific time table from complete time table (<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">PRO Feature</a>)
+	* Admin can also generate class specific time table from complete time table (<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">PRO Feature</a>)
 	* Classes archive and single pages can also be viewed from front end of the website
 	* Classes archive page lists all classes with class details like (session, semester, fall/spring)
 	* Any student can view each class details from front end of the website
@@ -59,7 +59,7 @@ Features List:
 	* Each course file can also be seen publicly on front end side of the website
 	* Archive page and single page of each course file are publicly visible to anyone
 	* Admin can printout each part of the course file from admin or front end side of the website
-8. Teachers / Faculty Members Module (<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">PRO Features</a>):
+8. Teachers / Faculty Members Module (<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">PRO Features</a>):
 	* Teacher registration page is automatically created when UniLMS plugin is activated
 	* Teacher can edit his/her profile by logging in to the backend of website and visiting profile menu
 	* All teachers/faculty members list page is automatically created when UniLMS plugin is activated
@@ -73,7 +73,7 @@ Features List:
 	* Admin can assign a course to a particular teacher
 	* When a teacher registers to the website, then he/she cannot login to the website until admin approves it
 	* Content created by teachers is not published until admin reviews it
-9. Time Tables Module (<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">PRO Features</a>):
+9. Time Tables Module (<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">PRO Features</a>):
 	* Admin can generate random time table automatically
 	* Time table can be generated from courses, classes and faculty members added inside UniLMS plugin
 	* Admin can also generate custom time table for custom courses, classes and faculty members
@@ -83,7 +83,7 @@ Features List:
 10. Settings Module:
 	Admin can define institute logo which can be used while printing course files or any other documents
 
-<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">GET PRO VERSION</a>
+<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">GET PRO VERSION</a>
 
 == Installation ==
 
@@ -119,6 +119,12 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+= 1.0.4 =
+* Conditional features loading which will increase performance
+* Display default message in case there is no course available
+* Fixed shortcodes issue in gutenberg
+* Fixed profile pic issue on student dashboard page
+* Removed course thumbnail from archive page
 = 1.0.3 =
 * Edited the description of the plugin
 = 1.0.2 =

@@ -4,11 +4,10 @@
 function uni_lms_student_dash_shortcode_std() {
 	global $current_user;
 	$current_user_id = get_current_user_id();
-
+	ob_start();
 	if($current_user_id != 0){
 		$profile_pic = get_avatar_url( $current_user_id);
 	    ?>
-	    
 	    <style>
 	    .uni_lms_teacher_profile .col-container {
 		    display: block; 
@@ -20,8 +19,8 @@ function uni_lms_student_dash_shortcode_std() {
 		}
 
 		.uni_lms_teacher_profile .prof-pic img{
-			width: 200px;
-			height: 200px;
+			max-width: 200px;
+			max-height: 200px;
 			border-radius: 50%;
 		}
 
@@ -226,6 +225,7 @@ function uni_lms_student_dash_shortcode_std() {
 	}else{
 		_e('Sorry! No data to show', 'unilms');
 	}
+	return ob_get_clean();
 }
 add_shortcode( 'uni_lms_student_dashboard', 'uni_lms_student_dash_shortcode_std' );
 
