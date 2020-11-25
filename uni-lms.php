@@ -3,14 +3,14 @@
 /**
  * The plugin bootstrap file
  * @link              https://codoplex.com
- * @since             1.0.4
+ * @since             1.0.5
  * @package           Unilms
  *
  * @wordpress-plugin
  * Plugin Name:       UniLMS
  * Plugin URI:        https://codecanyon.net/item/unilms-learning-management-system/20645782
  * Description:       A learning management system developed for universities, schools, colleges, academies or any other type of institutes.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Junaid Hassan
  * Author URI:        https://codoplex.com
  * License:           GPL-2.0+
@@ -41,7 +41,7 @@ global $unilmspro_plugin_name;
 $unilmspro_plugin_name = 'unilms';
 
 global $unilmspro_plugin_version;
-$unilmspro_plugin_version = '1.0.4';
+$unilmspro_plugin_version = '1.0.5';
 
 if ( is_admin() ) {
     //this code runs only on the admin side
