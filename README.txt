@@ -121,6 +121,9 @@ This section describes how to install the plugin and get it working.
 
 = 1.0.5 =
 * Removed institute logo from course detail page
+* Updated PRO version links
+* Added compatibility for CODOSWP theme
+* Optimized templates
 = 1.0.4 =
 * Conditional features loading which will increase performance
 * Display default message in case there is no course available

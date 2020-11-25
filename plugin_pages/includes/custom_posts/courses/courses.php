@@ -360,7 +360,7 @@ function display_uni_lms_course_contents_meta_box_std( $uni_lms_course ) {
                         while ( $loop->have_posts() ) : $loop->the_post();
                            
                         ?>
-                            <option value="<?php echo esc_attr(get_the_ID());?>" <?php if($course_section_assignment == get_the_ID()){echo 'selected';}?> ><?php echo  esc_html(the_title());?></option>
+                            <option value="<?php echo esc_attr(get_the_ID());?>" ><?php echo  esc_html(the_title());?></option>
                         <?php
                         endwhile; 
                     ?>
@@ -383,10 +383,9 @@ function display_uni_lms_course_contents_meta_box_std( $uni_lms_course ) {
                             )
                         );
                         $loop = new WP_Query( $args );
-                        while ( $loop->have_posts() ) : $loop->the_post();
-                            
+                        while ( $loop->have_posts() ) : $loop->the_post();   
                         ?>
-                            <option value="<?php echo esc_attr(get_the_ID());?>" <?php if($course_section_quiz == get_the_ID()){echo 'selected';}?> ><?php echo  esc_html(the_title());?></option>
+                            <option value="<?php echo esc_attr(get_the_ID());?>" ><?php echo  esc_html(the_title());?></option>
                         <?php
                         endwhile; 
                     ?>
@@ -438,7 +437,7 @@ function display_uni_lms_course_contents_meta_box_std( $uni_lms_course ) {
                         while ( $loop->have_posts() ) : $loop->the_post();
                            
                         ?>
-                            <option value="<?php echo esc_attr(get_the_ID());?>" <?php if($course_section_assignment == get_the_ID()){echo 'selected';}?> ><?php echo  esc_html(the_title());?></option>
+                            <option value="<?php echo esc_attr(get_the_ID());?>" ><?php echo  esc_html(the_title());?></option>
                         <?php
                         endwhile; 
                     ?>
@@ -464,7 +463,7 @@ function display_uni_lms_course_contents_meta_box_std( $uni_lms_course ) {
                         while ( $loop->have_posts() ) : $loop->the_post();
                             
                         ?>
-                            <option value="<?php echo esc_attr(get_the_ID());?>" <?php if($course_section_quiz == get_the_ID()){echo 'selected';}?> ><?php echo  esc_html(the_title());?></option>
+                            <option value="<?php echo esc_attr(get_the_ID());?>" ><?php echo  esc_html(the_title());?></option>
                         <?php
                         endwhile; 
                     ?>

@@ -14,7 +14,7 @@
 						<h2 class="hndle"><span><?php esc_attr_e( 'UniLMS Quick Guide', 'unilms' ); ?></span></h2>
 
 						<div class="inside">
-							<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">GET PRO VERSION</a>
+							<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">GET PRO VERSION</a>
 							<h4>Step 1:</h4>
 							<strong><?php esc_attr_e('When UniLMS plugin is activated then following pages are automatically created:', 'unilms');?></strong>
 							<ol>

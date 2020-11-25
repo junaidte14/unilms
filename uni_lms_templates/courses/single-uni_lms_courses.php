@@ -52,8 +52,8 @@ get_header(); ?>
                 <div class="entry-content-wrapper">
                     <div class="entry-content">
                         <div class="uni_lms_course_tabs">
-                        <button id="course-default-tab" class="tablinks" onclick="openCourseSections(event, 'course_overview')"><?php _e('Overview', 'unilms');?></button>
-                        <button class="tablinks" onclick="openCourseSections(event, 'course_contents')"><?php _e('Contents', 'unilms');?></button>
+                            <button id="course-default-tab" class="tablinks" onclick="openCourseSections(event, 'course_overview')"><?php _e('Overview', 'unilms');?></button>
+                            <button class="tablinks" onclick="openCourseSections(event, 'course_contents')"><?php _e('Contents', 'unilms');?></button>
                         </div>
                         <div id="course_overview" class="uni_lms_course_tabcontent">
                             <?php the_content(); ?>
@@ -61,11 +61,10 @@ get_header(); ?>
                         <div id="course_contents" class="uni_lms_course_tabcontent">
                             <?php 
                                 $repeatable_fields_unilms_coursecont = get_post_meta(get_the_ID(), 'repeatable_fields_unilms_coursecont', true);
-        
                                 if ( $repeatable_fields_unilms_coursecont ){
                                     $i = 1;
                                     foreach ( $repeatable_fields_unilms_coursecont as $field ) {
-                            ?>     
+                                    ?>     
                                     <h5><?php _e('Day ', 'unilms'); echo '-'. $i; ?></h5> 
                                     <?php if(array_key_exists('unilms_coursecont_lecture', $field) && $field['unilms_coursecont_lecture'] != ''): ?>
                                     <strong><?php _e('Lecture: ', 'unilms');?></strong>

@@ -1,6 +1,5 @@
 <?php
 /*create shortcode to display student dashboard*/
-
 function uni_lms_student_dash_shortcode_std() {
 	global $current_user;
 	$current_user_id = get_current_user_id();
@@ -101,7 +100,6 @@ function uni_lms_student_dash_shortcode_std() {
 	              <button class="tablinks" onclick="openCourseSections(event, 'course_contents')"><?php _e('Results', 'unilms');?></button>
 	            </div>
 	            <div id="course_overview" class="uni_lms_course_tabcontent">
-	                <h3><?php _e('Details', 'unilms');?></h3>
 	                <?php if ( get_the_author_meta( 'uni_lms_dpt', $current_user_id ) ) { ?>
 						<p class="uni_lms_dpt clear">
 							<strong><?php _e('Department:', 'unilms');?></strong> <?php the_author_meta( 'uni_lms_dpt', $current_user_id ); ?>
@@ -137,7 +135,6 @@ function uni_lms_student_dash_shortcode_std() {
 	                    $course_title = get_the_title();
 	                    if($class_course == "yes"):
 	                    	$course_id = get_the_ID();
-	                    	//echo $course_id. '</br>';
 			                ?>
 			                <h3><?php printf(__('Quizzes Result for (%s)', 'unilms'), esc_html($course_title));?></h3>
 			                <?php 

@@ -119,7 +119,7 @@ $total_assignments = $loop7->found_posts;
 						<h2 class="hndle"><span><?php esc_attr_e( 'UniLMS Features', 'unilms' ); ?></span></h2>
 
 						<div class="inside">
-							<a href="https://codoplex.com/product/unilms-a-learning-management-wordpress-plugin/" target="_blank">GET PRO VERSION</a>
+							<a href="https://codecanyon.net/item/unilms-learning-management-system/20645782" target="_blank">GET PRO VERSION</a>
 							<ol>
 								<li>
 									<strong><?php esc_attr_e('Students Module',	'unilms');?></strong>

@@ -190,14 +190,13 @@ function uni_lms_scripts_styles_std()
 
     wp_register_script( 'uni_lms_tabs_script', plugins_url( '/js/uni_lms_tabs.js', __FILE__ ), array(), '', true);
 
-    if( is_single() && (get_post_type()=='uni_lms_courses' ||
-        get_post_type()=='uni_lms_lectures' || 
+    if( is_single() && (get_post_type()=='uni_lms_courses' || 
         get_post_type()=='uni_lms_quizzes'||
         get_post_type()=='uni_lms_course_files'||
         get_post_type()=='uni_lms_classes') ){
-        wp_enqueue_style( 'uni_lms_tabs_style' );
-        wp_enqueue_style( 'uni_lms_print_style' );
-        wp_enqueue_script( 'uni_lms_tabs_script' );
+            wp_enqueue_style( 'uni_lms_tabs_style' );
+            wp_enqueue_style( 'uni_lms_print_style' );
+            wp_enqueue_script( 'uni_lms_tabs_script' );
     }
     wp_enqueue_style( 'uni_lms_styles' );
 }
